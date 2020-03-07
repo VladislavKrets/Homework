@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "task3.h"
 using namespace std;
 
 const int PAIR_COUNT = 3;
@@ -177,6 +177,8 @@ class Policy{
             delete [] this->policyInformation;
             this->policyInformation = policyInformation;
         }
+		friend int countPoliciesBySurname(Policy ** policies,
+			int policiesCount, char * surname);
     
 };
 
@@ -405,7 +407,7 @@ int getIndexByPolicyName(Pair ** pairs, int policyCount, char * command){
     return -1;
 }
 
-Pair ** initPairs(Pair ** pairs){
+Pair ** initPairs(){
     Pair ** pairs = new Pair*[PAIR_COUNT];
     pairs[OBLIGATORY_INDEX] = new Pair("obl_policy", OBLIGATORY_INDEX);
     pairs[OSAGO_INDEX] = new Pair("os_policy", OSAGO_INDEX);
@@ -473,10 +475,18 @@ int countPoliciesBySurname(Policy ** policies, int policiesCount, char * surname
     return count;
 }
 
-int main(){
-    Passport ** passports = new Passport*[10];
-    Policy ** policies = new Policy*[10];
-    Pair ** pairs = initPairs(pairs);
+void taskThreeRun(){
+	int passportsSize = 0;
+	int policiesSize = 0;
+	
+	cout << "Enter passports count: " << endl;
+	cin >> passportsSize;
+	cout << "Enter policies count:" << endl;
+	cin >>policiesSize;
+	
+	Passport ** passports = new Passport*[passportsSize];
+    Policy ** policies = new Policy*[policiesSize];
+    Pair ** pairs = initPairs();
     int passportsCount = 0;
     int policiesCount = 0;
     cout << "Enter passport" << endl;
@@ -527,3 +537,4 @@ int main(){
         }
     }
 }
+
