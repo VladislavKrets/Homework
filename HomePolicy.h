@@ -20,6 +20,7 @@ public:
     ~HomePolicy();
 
     Home *getHome();
+    void print() override;
 };
 
 

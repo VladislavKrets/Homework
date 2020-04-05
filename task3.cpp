@@ -78,6 +78,7 @@ Home *enterHome() {
     cout << endl << "Enter space: ";
     cin >> space;
     cout << endl << "Home has been entered" << endl;
+    return new Home(address, ownersCount, space);
 }
 
 Policy *enterPolicy(Passport *passport, int policyType) {
@@ -87,7 +88,7 @@ Policy *enterPolicy(Passport *passport, int policyType) {
     char *company = new char[255];
     char *policyInformation = new char[255];
 
-    cout << "Entering obligatorily policy data.." << endl;
+    cout << "Entering policy data.." << endl;
     cout << "Enter policy serial number: ";
     cin >> serialNumber;
     cout << endl << "Enter start insurance data: ";

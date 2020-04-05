@@ -20,6 +20,7 @@ public:
     ~OsagoPolicy();
 
     Car *getCar();
+    void print() override;
 };
 
 

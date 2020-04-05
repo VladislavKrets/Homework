@@ -10,14 +10,14 @@ Home::~Home() {
     delete[] address;
 }
 
-char *Home::getAddress() const {
+char *Home::getAddress(){
     return address;
 }
 
-int Home::getOwnersCount() const {
+int Home::getOwnersCount(){
     return ownersCount;
 }
 
-int Home::getSpace() const {
+int Home::getSpace(){
     return space;
 }

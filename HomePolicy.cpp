@@ -18,3 +18,11 @@ HomePolicy::~HomePolicy() {
 Home* HomePolicy::getHome() {
     return this->home;
 }
+
+void HomePolicy::print() {
+    Policy::print();
+    std::cout << "\tHome info" << std::endl;
+    std::cout << "\tAddress: " << home->getAddress() << std::endl;
+    std::cout << "\tSpace: " << home->getSpace() << std::endl;
+    std::cout << "\tOwners count: " << home->getOwnersCount() << std::endl;
+}

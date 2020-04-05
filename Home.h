@@ -16,11 +16,11 @@ public:
 
     ~Home();
 
-    char *getAddress() const;
+    char *getAddress();
 
-    int getOwnersCount() const;
+    int getOwnersCount();
 
-    int getSpace() const;
+    int getSpace();
 };
 
 

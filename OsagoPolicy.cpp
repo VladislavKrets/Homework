@@ -17,3 +17,11 @@ OsagoPolicy::~OsagoPolicy() {
 Car* OsagoPolicy::getCar() {
     return this->car;
 }
+void OsagoPolicy::print(){
+    Policy::print();
+    std::cout << "\tCar info" << std::endl;
+    std::cout << "\tNumber: " << car->getNumber() << std::endl;
+    std::cout << "\tModel: " << car->getModel() << std::endl;
+    std::cout << "\tCapacity: " << car->getCapacity() << std::endl;
+    std::cout << "\tPower: " << car->getPower() << std::endl;
+}
