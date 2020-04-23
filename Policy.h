@@ -1,21 +1,16 @@
-//
-// Created by lollipop on 05.04.20.
-//
-
 #ifndef HOMEWORK_POLICY_H
 #define HOMEWORK_POLICY_H
-#include "Passport.h"
 #include "iostream"
 class Policy {
-    Passport *passport;
+    char*passport;
     long serialNumber;
     char *company;
     char *policyInformation;
 public:
-    Policy(Passport *passport, long serialNumber, char *company, char *policyInformation);
-    Policy(Passport *passport, long serialNumber,char *company);
+    Policy(char*passport, long serialNumber, char *company, char *policyInformation);
+    Policy(char *passport, long serialNumber,char *company);
     ~Policy();
-    Passport *getPassport();
+    char *getPassport();
     long getSerialNumber();
     char *getPolicyInformation();
     char *getCompany();

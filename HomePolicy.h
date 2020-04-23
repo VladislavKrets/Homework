@@ -1,18 +1,13 @@
-//
-// Created by lollipop on 05.04.20.
-//
-
 #ifndef HOMEWORK_HOMEPOLICY_H
 #define HOMEWORK_HOMEPOLICY_H
-#include "Home.h"
 #include "Policy.h"
 class HomePolicy : public Policy {
-    Home *home;
+    char *home;
 public:
-    HomePolicy(Passport *passport, int serialNumber,  char *company,
-               char *policyInformation, Home *home);
+    HomePolicy(char *passport, int serialNumber,  char *company,
+               char *policyInformation, char *home);
     ~HomePolicy();
-    Home *getHome();
+    char *getHome();
     void print() override;
 };
 #endif //HOMEWORK_HOMEPOLICY_H

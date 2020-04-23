@@ -1,18 +1,13 @@
-//
-// Created by lollipop on 05.04.20.
-//
-
 #ifndef HOMEWORK_OSAGOPOLICY_H
 #define HOMEWORK_OSAGOPOLICY_H
 #include "Policy.h"
-#include "Car.h"
 class OsagoPolicy : public Policy {
-    Car *car;
+    char *car;
 public:
-    OsagoPolicy(Passport *passport, int serialNumber, char *company,
-                char *policyInformation, Car *car);
+    OsagoPolicy(char *passport, int serialNumber, char *company,
+                char *policyInformation, char *car);
     ~OsagoPolicy();
-    Car *getCar();
+    char *getCar();
     void print() override;
 };
 #endif //HOMEWORK_OSAGOPOLICY_H

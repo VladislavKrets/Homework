@@ -3,12 +3,12 @@
 //
 
 #include "Policy.h"
-Policy::Policy(Passport *passport, long serialNumber, char *company,
+Policy::Policy(char *passport, long serialNumber, char *company,
                char *policyInformation) :
         passport(passport), serialNumber(serialNumber),
         company(company), policyInformation(policyInformation) {}
 
-Policy::Policy(Passport *passport, long serialNumber,
+Policy::Policy(char *passport, long serialNumber,
                char *company) :
         passport(passport), serialNumber(serialNumber),
         company(company), policyInformation("default info") {}
@@ -16,7 +16,7 @@ Policy::~Policy() {
     delete[] company;
     delete[] policyInformation;
 }
-Passport* Policy::getPassport() {
+char* Policy::getPassport() {
     return this->passport;
 }
 long Policy::getSerialNumber() {
@@ -37,7 +37,7 @@ void Policy::setPolicyInformation(char *policyInformation) {
     this->policyInformation = policyInformation;
 }
 void Policy::print() {
-    std::cout << "\t" << passport->getSurname() << std::endl;
+    std::cout << "\t" << passport << std::endl;
     std::cout << "\t" << "Serial number: " << getSerialNumber() << std::endl;
     std::cout << "\t" << "Company: " << getCompany() << std::endl;
     std::cout << "\t" << "Policy information: " << getPolicyInformation() << std::endl;
