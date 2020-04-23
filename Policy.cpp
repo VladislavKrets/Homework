@@ -3,23 +3,16 @@
 //
 
 #include "Policy.h"
-
-Policy::Policy(Passport *passport, long serialNumber, char *startInsuranceDate, char *endInsuranceDate, char *company,
+Policy::Policy(Passport *passport, long serialNumber, char *company,
                char *policyInformation) :
         passport(passport), serialNumber(serialNumber),
-        startInsuranceDate(startInsuranceDate),
-        company(company),
-        endInsuranceDate(endInsuranceDate), policyInformation(policyInformation) {}
+        company(company), policyInformation(policyInformation) {}
 
-Policy::Policy(Passport *passport, long serialNumber, char *startInsuranceDate, char *endInsuranceDate,
+Policy::Policy(Passport *passport, long serialNumber,
                char *company) :
         passport(passport), serialNumber(serialNumber),
-        startInsuranceDate(startInsuranceDate),
-        company(company),
-        endInsuranceDate(endInsuranceDate), policyInformation("default info") {}
+        company(company), policyInformation("default info") {}
 Policy::~Policy() {
-    delete[] startInsuranceDate;
-    delete[] endInsuranceDate;
     delete[] company;
     delete[] policyInformation;
 }
@@ -28,12 +21,6 @@ Passport* Policy::getPassport() {
 }
 long Policy::getSerialNumber() {
     return this->serialNumber;
-}
-char* Policy::getStartInsuranceDate() {
-    return this->startInsuranceDate;
-}
-char* Policy::getEndInsuranceDate() {
-    return this->endInsuranceDate;
 }
 char* Policy::getPolicyInformation(){
     return this->policyInformation;
@@ -50,10 +37,8 @@ void Policy::setPolicyInformation(char *policyInformation) {
     this->policyInformation = policyInformation;
 }
 void Policy::print() {
-    std::cout << "\t" << passport->getName() << " " << passport->getSurname() << std::endl;
+    std::cout << "\t" << passport->getSurname() << std::endl;
     std::cout << "\t" << "Serial number: " << getSerialNumber() << std::endl;
-    std::cout << "\t" << "Start insurance date: " << getStartInsuranceDate() << std::endl;
-    std::cout << "\t" << "End insurance date: " << getEndInsuranceDate() << std::endl;
     std::cout << "\t" << "Company: " << getCompany() << std::endl;
     std::cout << "\t" << "Policy information: " << getPolicyInformation() << std::endl;
 }

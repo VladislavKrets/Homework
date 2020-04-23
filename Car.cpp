@@ -3,10 +3,8 @@
 //
 
 #include "Car.h"
-
-Car::Car(char *number, char *model, int capacity, int power) :
-        number(number), model(model),
-        capacity(capacity), power(power) {}
+Car::Car(char *number, char *model) :
+        number(number), model(model) {}
 Car::~Car() {
     delete[] number;
     delete[] model;
@@ -16,10 +14,4 @@ char* Car::getNumber() {
 }
 char* Car::getModel() {
     return this->model;
-}
-int Car::getCapacity() {
-    return this->capacity;
-}
-int Car::getPower() {
-    return this->power;
 }

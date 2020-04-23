@@ -4,18 +4,14 @@
 
 #include "Home.h"
 
-Home::Home(char *address, int ownersCount, int space) :
-        address(address), ownersCount(ownersCount), space(space) {}
+Home::Home(char *address, int space) :
+        address(address), space(space) {}
 Home::~Home() {
     delete[] address;
 }
 
 char *Home::getAddress(){
     return address;
-}
-
-int Home::getOwnersCount(){
-    return ownersCount;
 }
 
 int Home::getSpace(){

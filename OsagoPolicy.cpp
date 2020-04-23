@@ -3,11 +3,9 @@
 //
 
 #include "OsagoPolicy.h"
-
-OsagoPolicy::OsagoPolicy(Passport *passport, int serialNumber, char *startInsuranceDate, char *endInsuranceDate,
+OsagoPolicy::OsagoPolicy(Passport *passport, int serialNumber,
                          char *company, char *policyInformation, Car *car)
         : Policy(passport, serialNumber,
-                 startInsuranceDate, endInsuranceDate,
                  company, policyInformation) {
     this->car = car;
 }
@@ -22,6 +20,4 @@ void OsagoPolicy::print(){
     std::cout << "\tCar info" << std::endl;
     std::cout << "\tNumber: " << car->getNumber() << std::endl;
     std::cout << "\tModel: " << car->getModel() << std::endl;
-    std::cout << "\tCapacity: " << car->getCapacity() << std::endl;
-    std::cout << "\tPower: " << car->getPower() << std::endl;
 }
